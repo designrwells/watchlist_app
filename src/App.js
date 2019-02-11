@@ -17,7 +17,8 @@ class App extends Component {
             target="_blank"
             rel="noopener noreferrer"
           >
-            TESTING 123456745645456
+            
+            Some other test text 
           </a>
         </header>
       </div>
