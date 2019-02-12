@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import Header from './components/Header/';
+import Header from './components/Header';
 import Sidebar from './components/Sidebar';
+import Main from './components/Main';
+import List from './components/List';
 import './App.css';
 
 class App extends Component {
@@ -13,7 +15,7 @@ class App extends Component {
         		<Sidebar />
         	</div>
         	<div className='App-content-wrapper'>
-        		<h1 className='App-main-title'>Main title</h1>
+        		<Main title='Popular'/>
         	</div>
         </div>
       </div>
