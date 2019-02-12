@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { NavLink } from 'react-router-dom';
 import './index.css';
 
 const Sidebar = () => {
@@ -7,13 +7,13 @@ const Sidebar = () => {
 		<div className='App-sidebar'> 
 			<ul className='sidebar-menu'>
 				<li className='sidebar-menu__item'>
-					<a href='/' className='is-active'>Popular</a>
+					<NavLink exact={true} to='/' activeClassName='is-active'>Popular</NavLink>
 				</li>
 				<li className='sidebar-menu__item'>
-					<a href='/top-rated'>Top Rated</a>
+					<NavLink exact={true} to='/top-rated' activeClassName='is-active'>Top Rated</NavLink>
 				</li>
 				<li className='sidebar-menu__item'>
-					<a href='/coming-soon'>Coming Soon</a>
+					<NavLink exact={true} to='/coming-soon' activeClassName='is-active'>Coming Soon</NavLink>
 				</li>
 			</ul>
 		</div>
