@@ -14,10 +14,14 @@ class SearchBar extends Component {
 	}
 
 	getSearchMovies = (searchTerm) => {
-		fetch(`${PATH_BASE}${PATH_SEARCH}${PATH_MOVIE}?api_key=${API_KEY}&query=${searchTerm}`)
+		const TERM = searchTerm.replace(/\s/g, '+');
+		fetch(`${PATH_BASE}${PATH_SEARCH}${PATH_MOVIE}?api_key=${API_KEY}&query=${TERM}`)
 		.then(response => response.json())
 		.then(result => 
-			this.props.history.push(`/search?query=${searchTerm}`, result)
+			this.props.history.push({
+				pathname: `/search?query=${TERM}`,
+				state: {result}
+				})
 			);
 	}
 
@@ -35,7 +39,6 @@ class SearchBar extends Component {
 
 	render() {
 		const {searchTerm} = this.state;
-		console.log(this.state);
 
 		return(
 			<div className='SearchBar-wrapper'>
@@ -48,13 +51,6 @@ class SearchBar extends Component {
 						value={searchTerm}
 					/>
 				</form>
-				{
-					result &&
-					<Redirect to={{
-						pathname: `/search?query=${searchTerm}`,
-						state: { result, searchTerm }
-					}}/>
-				}
 			</div>
 		);
 	}
