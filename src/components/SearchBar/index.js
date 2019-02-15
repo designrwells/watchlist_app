@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
-import { API_KEY, PATH_BASE, PATH_SEARCH, PATH_MOVIE } from '../../api';
 import './index.css'
 
 class SearchBar extends Component {
@@ -9,20 +8,7 @@ class SearchBar extends Component {
 
 		this.state = {
 			searchTerm: '',
-			result: null
 		};
-	}
-
-	getSearchMovies = (searchTerm) => {
-		const TERM = searchTerm.replace(/\s/g, '+');
-		fetch(`${PATH_BASE}${PATH_SEARCH}${PATH_MOVIE}?api_key=${API_KEY}&query=${TERM}`)
-		.then(response => response.json())
-		.then(result => 
-			this.props.history.push({
-				pathname: `/search?query=${TERM}`,
-				state: {result}
-				})
-			);
 	}
 
 	handleSearchChange = (e) => {
@@ -34,7 +20,9 @@ class SearchBar extends Component {
 	handleSearchSubmit = (e) => {
 		e.preventDefault();
 		const {searchTerm} = this.state;
-		this.getSearchMovies(searchTerm);
+		this.props.history.push({
+     		pathname: `/search?query=${searchTerm}`,
+     	})
 	}
 
 	render() {
