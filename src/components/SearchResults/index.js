@@ -14,8 +14,10 @@ class SearchResults extends Component {
 
   }
 
-  componentDidMount = () => {
-    this.getSearchMovies(this.props.match.params.searchTerm, DEFAULT_PAGE)
+  getQueryStrings = (term) => {
+    const query = new URLSearchParams(term);
+    const searchTerm = query.get('query');
+    return searchTerm;
   }
 
   getSearchMovies = (searchTerm, page) => {
@@ -44,6 +46,14 @@ class SearchResults extends Component {
       movies: {
         results: updatedResults, page, total_pages, total_results }
     })
+  }
+
+  componentDidMount = () => {
+    this.getSearchMovies(this.getQueryStrings(this.props.location.search), DEFAULT_PAGE)
+  }
+
+  componentWillReceiveProps = (nextProps) => {
+  	this.getSearchMovies(this.getQueryStrings(nextProps.location.search), DEFAULT_PAGE)
   }
 
   render () {
