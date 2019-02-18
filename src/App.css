@@ -3,7 +3,7 @@
 }
 .App-main{
   display: grid;
-  grid-template-columns: 15% auto;
+  grid-template-columns: 15% auto 40%;
   min-height: 100vh;
 }
 
@@ -13,6 +13,12 @@
 
 .App-content-wrapper{
   padding: 25px 2em;
-  background-color: #222B31;
-  color: #FFF;
+  background-color: #FFF;
+  color: #000;
+}
+
+.App-preview-wrapper{
+  padding: 25px 2em;
+  background-color: #191C1F;
+  color: #000;
 }

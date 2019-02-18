@@ -40,3 +40,9 @@
 .sidebar-menu__item a.is-active:hover:after{
   color: rgba(255, 255, 255, 0.8);
 }
+
+.App-logo{
+  overflow: hidden;
+  position: relative;
+  max-width: 120px;
+}

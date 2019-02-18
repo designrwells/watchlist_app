@@ -1,7 +1,6 @@
 .App-header {
   display: grid;
-  grid-template-columns: 15% auto;
-  background-color: #cc343f;
+  background-color: #fff;
 }
 
 .App-header-title{
@@ -9,12 +8,6 @@
   text-align: center;
   display: block;
   transition: all .5s ease;
-}
-
-.App-logo{
-  overflow: hidden;
-  position: relative;
-  max-width: 120px;
 }
 
 .App-logo:hover .App-header-title{

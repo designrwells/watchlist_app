@@ -1,17 +1,21 @@
 .SearchBar-wrapper{
+  border: solid 2px #ccc;
+  border-radius: 50px;
 }
 
 .search-movie-input{
-  width: 100%;
-  padding: 35px;
+  margin: auto;
+  padding: 8px;
   font-size: 20px;
-  background-color: #e53b47;
   border: 0;
-  color: white;
+  color: #aaa;
+  border-radius: 50px;
 }
-
+input {
+  padding-left: 20px;
+}
 .search-movie-input::placeholder{
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(150, 150, 150, 0.5);
 }
 
 .search-movie-input:focus{

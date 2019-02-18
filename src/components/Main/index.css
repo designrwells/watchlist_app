@@ -22,7 +22,8 @@
 .list__movie-title{
   display: block;
   font-size: 16px;
-  color: #FFF;
+  text-align: center;
+  color: #333;
 }
 
 .list__movie-vote-average{
