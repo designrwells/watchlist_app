@@ -4,7 +4,7 @@ import './index.css';
 
 const List = ({ list }) => {
 
-	this.titleURL = (title) => title.replace(/\W+/g, '-').toLowerCase()
+	const titleURL = (title) => title.replace(/\W+/g, '-').toLowerCase()
 
 	return(
 		<div className='list-container'>
@@ -14,9 +14,7 @@ const List = ({ list }) => {
 						<span className='list__movie-vote-average'>{item.vote_average}</span>
 						{
 						item.poster_path ? (
-							<Link to={`/movie/${item.id}-${this.titleURL(item.title)}`}>
-								<img src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${item.poster_path}`} alt={item.title} />
-							</Link>
+							<Link to={`/movie/${item.id}-${titleURL(item.title)}`}><img src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${item.poster_path}`} alt={item.title}/></Link>
 						)
 						: 
 						(
